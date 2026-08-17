@@ -1,0 +1,60 @@
+
+/* Main Discussion Forum */
+
+.search-input {
+  max-width: 250px;
+}
+
+
+/* Table */
+
+.table {
+  vertical-align: middle;
+}
+
+.table th {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 12px;
+}
+
+
+/* Action Buttons */
+
+.btn-sm {
+  border-radius: 6px;
+}
+
+
+/* Card Hover Effect */
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+  .card-body {
+    padding: 20px !important;
+  }
+
+  .search-input {
+    max-width: 100%;
+  }
+
+  .table {
+    min-width: 800px;
+  }
+
+}
+

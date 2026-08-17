@@ -1,0 +1,152 @@
+/* Full Page */
+
+.outer {
+    min-height: 100vh;
+    overflow-x: hidden;
+   
+}
+
+/* Left Section */
+
+.details {
+    background: linear-gradient(135deg, #10263d, #056a4d);
+}
+
+.simg {
+    width: 120px;
+    height: 120px;
+}
+
+.intro {
+    color: #8df0cb;
+    font-size: 22px;
+    width: 500px;
+    text-align: center;
+}
+
+/* Process */
+
+.process {
+    width: 420px;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.line {
+    border-color: rgba(255,255,255,.15);
+    margin: 18px 0;
+}
+
+/* Right Section */
+
+.rightPanel {
+    overflow-y: auto;
+    background: white;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+/* Progress */
+
+.step {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #d9dee7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #8f96a3;
+    background: white;
+}
+
+.step.active {
+    background: #19bb79;
+    color: white;
+    border: none;
+}
+
+/* Inputs */
+
+.form-control,
+.form-select {
+    height: 48px;
+    border-radius: 10px;
+    box-shadow: none !important;
+}
+
+textarea.form-control {
+    height: auto;
+    resize: none;
+}
+
+/* Button */
+
+.button {
+    background-color: #24ca88 !important;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #149965;
+}
+
+/* Sign In */
+
+.signbtn {
+    color: #19bb79;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signbtn:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+
+@media (max-width:992px) {
+
+    .details {
+        display: none !important;
+    }
+
+    .rightPanel {
+        width: 100%;
+        padding: 30px !important;
+    }
+
+}
+
+@media (max-width:576px) {
+
+    .intro,
+    .process {
+        width: 100%;
+    }
+
+    .row>.col {
+        margin-bottom: 10px;
+    }
+
+}

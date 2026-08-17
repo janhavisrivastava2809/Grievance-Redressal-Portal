@@ -1,0 +1,51 @@
+.complaints-page {
+  min-height: 100vh;
+  background-color: #f4f7fa;
+}
+
+.complaints-card {
+  border-radius: 15px;
+}
+
+.complaints-title {
+  color: #61778d;
+}
+
+.entries-select {
+  width: 85px;
+}
+
+.search-input {
+  width: 250px;
+}
+
+.complaints-table th {
+  color: #40566d;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 18px 12px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.complaints-table td {
+  padding: 18px 12px;
+  color: #183b5b;
+}
+
+.complaints-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.complaints-table tbody tr:hover {
+  background-color: #f5f8fb;
+}
+
+.complaints-table .badge {
+  min-width: 110px;
+  padding: 7px 12px;
+  text-transform: capitalize;
+}
+
+.action-btn {
+  min-width: 90px;
+}

@@ -1,0 +1,25 @@
+.smi{
+    height: 35px;
+    width: 35px;
+    background-color: black;
+    border-radius: 50%;
+}
+.box1{
+    height: 100%;
+    width:100%;
+    border-radius:50%;
+}
+.box1 img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.card img{
+    height: 280px;
+}
+.footer{
+    min-height: 300px;
+}
+.footer img{
+    height: 100px;
+}

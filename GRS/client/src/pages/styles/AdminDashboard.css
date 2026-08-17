@@ -1,0 +1,183 @@
+.container-fluid{
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ display:flex;
+ min-height : 100vh;
+ width: 100vw;
+ overflow-x: hidden;
+}
+.body{
+  background-color: rgb(242, 247, 252);
+  margin: 0;
+
+}
+.userimg{
+  
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.submenu{
+    margin-left:40px;
+    display:flex;
+    flex-direction:column;
+}
+
+.submenu-item{
+    color:#cbd5e1;
+    text-decoration:none;
+    padding:8px 0;
+    transition:.3s;
+    font-size:15px;
+}
+
+.submenu-item:hover{
+    color:white;
+    padding-left:10px;
+}
+/* Sidebar */
+
+.sidebar{
+    background:#111827;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    margin-bottom: 0px;
+    padding:20px 15px;
+    position:relative;
+    overflow-y:auto;
+}
+
+/* Logo */
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.logo-icon{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    background:#4f6df5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    color:white;
+}
+
+.logo-section h4{
+    margin:0;
+    font-size:22px;
+    font-weight:600;
+}
+
+.logo-section small{
+    color:#9ca3af;
+}
+
+/* Divider */
+
+.sidebar hr{
+    border-color:#2a3445;
+}
+
+/* Section Heading */
+
+.menu-title{
+    color:#6b7280;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:2px;
+    margin-top:25px;
+    margin-bottom:10px;
+}
+
+/* Menu */
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:13px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    color:#d1d5db;
+    transition:.3s;
+    margin-bottom:5px;
+}
+
+.menu i{
+    font-size:18px;
+}
+
+.menu span{
+    font-size:16px;
+    font-weight:500;
+}
+
+.menu:hover{
+    background:#1f2937;
+    color:white;
+}
+
+/* Active Menu */
+
+.active-menu{
+    background:#243b75;
+    color:white;
+    border-left:4px solid #4f8cff;
+}
+
+/* Logout */
+
+
+.logout-btn{
+    background: transparent;
+    border: none;
+    color: #ff8080;        
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.footer {
+  position:absolute !important ;
+  bottom: 0px;
+
+
+}
+.logout-btn:hover{
+    background: #1f2937;  
+    color: white;
+    border-radius: 8px;
+}
+
+.logout-btn:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+/* Scrollbar */
+
+.sidebar::-webkit-scrollbar{
+    width:6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+    background:#394150;
+    border-radius:20px;
+}
+
+.sidebar::-webkit-scrollbar-track{
+    background:#111827;
+}.card{
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+}

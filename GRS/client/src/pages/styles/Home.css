@@ -1,0 +1,24 @@
+.blue-shadow {
+  box-shadow: 0 0 20px rgba(0, 0, 139, 0.7);
+}
+
+.container-fluid {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card:hover {
+  transition: transform 0.4s ease-in;
+  cursor: pointer;
+  transform: scale(1.05);
+
+}
+
+
+.footer {
+  position:absolute !important;
+  bottom: 0px;
+  width: 100%;
+}

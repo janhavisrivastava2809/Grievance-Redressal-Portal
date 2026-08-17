@@ -1,0 +1,245 @@
+import React, { useState, useEffect } from "react";
+import "../styles/Session.css";
+import axios from "axios";
+
+const Session = () => {
+
+  const [data, setData] = useState({
+    name:''
+  });
+
+  const [session, setSession] = useState([]);
+  const [mode, setEditMode] = useState(null);
+  const [editId, setEditId] = useState(null);
+
+  const handleChange = (e) => {
+    setData(() => ({...data, [e.target.name]: e.target.value}));
+  }
+
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      if (mode) {
+
+        const res = await axios.put(`http://localhost:5000/api/session/${editId}`,data);
+        alert(res.data.msg);
+        setEditMode(false);
+        setData({
+          name: ''
+        });
+        handlefetch();
+        
+
+      } else {
+
+        const res = await axios.post(
+          "http://localhost:5000/api/session/register",
+          data,
+        );
+        console.log(res);
+        window.alert("Session Registered");
+        handlefetch();
+
+      }
+    } catch (error) {
+
+      console.log(error);
+      window.alert("Sorry try again");
+
+    }
+  };
+
+  const handlefetch = async () => {
+  try {
+    const res = await axios.get("http://localhost:5000/api/session/show");
+    console.log(res.data.session);
+    setSession(res.data.session);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+useEffect(() => {
+  handlefetch();
+}, []);
+
+  const handleEdit = (a) => {
+    console.log(a);
+    setData({
+      name: a.name
+    });
+    setEditMode(true);
+    setEditId(a._id);
+  };
+  console.log(data);
+
+  const handleDelete = async(a) => {
+    const res = await axios.delete(`http://localhost:5000/api/session/${a}`);
+    alert(res.data.msg);
+    handlefetch();
+  }
+
+   const handleBlock = async(a) => {
+    try {
+
+      if(a.status === "active"){
+         const res = await axios.patch(
+          `http://localhost:5000/api/session/${a._id}`,
+          {
+            status: "inactive",
+          }
+         );
+         
+        alert(res.data.msg);
+
+        handlefetch();
+      } else{
+         const res = await axios.patch(
+          `http://localhost:5000/api/session/${a._id}`,
+          {
+            status: "active",
+          }
+         );
+            alert(res.data.msg);
+
+           handlefetch();
+      }
+ 
+    } catch (error) {
+         console.log(error);
+      window.alert("Sorry try again");
+
+    }
+}
+
+  return (
+    <div className="container-fluid py-4">
+      <div className="row justify-content-center">
+        {/*  Add Session Card */}
+        <div className="col-lg-10 mx-5 my-5">
+          <div className="card border-0 shadow-lg rounded-4 w-100 h-1">
+            <div className="card-body p-5">
+              <h2 className="text-center text-primary fw-bold mb-5">
+                Add New Session
+              </h2>
+
+              <form method="POST" onSubmit={handleSubmit}>
+              <div className="mb-4 text-secondary">
+                <label className="form-label fw-bold ">Session Value</label>
+
+                <input
+                  type="text" name="name"  value={data.name} onChange={handleChange}
+                  className="form-control custom-input"
+                  placeholder="Enter Session(e.g 2026-2027"
+                />
+              </div>
+
+              <div className="text-center mt-5">
+                <button className="btn btn-primary save-btn">
+                 {mode ? "Update Session" : "Save Session"}
+                </button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Table Card */}
+        <div className="col-sm-11">
+          <div className="card border-0 shadow-lg rounded-4 w-100 h-1">
+            <div className="card-body p-4">
+              <h3 className="fw-bold text-secondary mb-4">
+                Registered Sessions
+              </h3>
+
+              <div className="d-flex justify-content-between align-items-center mb-4 ms-4">
+                <div className="d-flex align-items-center">
+                  <select className="form-select table-select">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                    <option>100</option>
+                  </select>
+
+                  <span className="ms-3">entries per page</span>
+                </div>
+
+                <input
+                  type="text"
+                  className="form-control search-box"
+                  placeholder="Search records..."
+                />
+              </div>
+
+              <div className="table-responsive">
+                <table className="table align-middle">
+                  <thead>
+                    <tr>
+                      <th>S NO.</th>
+                      <th>SESSION</th>
+                      <th>STATUS</th>
+                      <th className="text-end">ACTIONS</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                     {session.map((item, i) => (
+                      <tr>
+                        <th>{i + 1}</th>
+                        <td>{item.name}</td>
+                        <td>{item.status}</td>
+                         <td className="text-end">
+                        <button className="btn btn-outline-primary me-2 mt-3" onClick={()=>{handleEdit(item)}}>
+                          <i className="bi bi-pencil-square"></i> Edit
+                        </button>
+
+                        <button className="btn btn-outline-danger  me-2 mt-3" onClick={()=>{handleDelete(item._id)}}>
+                          <i className="bi bi-trash"></i> Delete
+                        </button>
+
+                         <button className="btn btn-outline-danger me-2 mt-3" onClick={() => {handleBlock(item);}}>
+                          <i class="bi bi-ban"></i>{item.status === "active" ? "Block" : "Unblock"}
+                        </button>
+                      </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="d-flex justify-content-between align-items-center mt-4">
+                <span>Showing 1 to 1 of 1 entry</span>
+
+                <nav>
+                  <ul className="pagination mb-0">
+                    <li className="page-item disabled">
+                      <button className="page-link">&laquo;</button>
+                    </li>
+
+                    <li className="page-item disabled">
+                      <button className="page-link">&lsaquo;</button>
+                    </li>
+
+                    <li className="page-item active">
+                      <button className="page-link">1</button>
+                    </li>
+
+                    <li className="page-item disabled">
+                      <button className="page-link">&rsaquo;</button>
+                    </li>
+
+                    <li className="page-item disabled">
+                      <button className="page-link">&raquo;</button>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Session;

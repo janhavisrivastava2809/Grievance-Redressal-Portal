@@ -1,0 +1,37 @@
+.complaints-page {
+  background-color: #f1f6fb;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.complaints-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.complaint-count {
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 6px 12px;
+}
+
+.table thead th {
+  color: #60758f;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  background-color: #f8fafc;
+  padding: 16px 20px;
+}
+
+.table tbody td {
+  padding: 18px 20px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #edf0f3;
+}

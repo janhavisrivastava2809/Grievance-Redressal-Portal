@@ -1,0 +1,46 @@
+.question-page {
+  background-color: #f1f6fb;
+  min-height: calc(100vh - 80px);
+  padding: 60px 20px;
+}
+
+/* Question Card */
+.question-card {
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(40, 70, 180, 0.5);
+}
+
+.question-card h2 {
+  font-size: 36px;
+}
+
+.question-input {
+  height: 105px;
+  font-size: 20px;
+  resize: vertical;
+}
+
+.question-btn {
+  font-size: 25px;
+  padding: 8px 20px;
+}
+
+/* Table */
+.question-table-container {
+  width: 75%;
+  margin: 70px auto 0;
+  background-color: white;
+}
+
+.question-table-container th {
+  font-size: 18px;
+  padding: 12px;
+}
+
+.question-table-container td {
+  padding: 12px;
+}

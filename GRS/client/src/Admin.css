@@ -1,0 +1,2723 @@
+/* Base Reset & Layout */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.portal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* padding: 20px; */
+  box-sizing: border-box;
+  width: 100% !important;
+}
+
+/* Header Styling */
+.header-section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.logo-placeholder img {
+  width: 200px;        /* Increased from 150px */
+  height: 200px;       /* Increased from 150px */
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 40%, #ffcccc 100%);
+  position: relative;
+}
+
+.university-title {
+  color: #1a73e8;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.portal-subtitle {
+  color: #202124;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 5px 0 0 0;
+}
+
+/* Cards Grid Layout */
+.cards-grid {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+/* Card Individual Styling */
+.portal-card {
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  width: 320px;
+  height: 160px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 10px rgba(8, 15, 24, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.portal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 28px 28px rgba(46, 50, 57, 0.25);
+}
+
+/* Card Icon Containers */
+.card-icon-container {
+  flex-shrink: 0;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Replaced circle styles with image sizing constraints */
+.card-custom-img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+/* Card Text Content */
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  color: #1a73e8;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 6px 0;
+}
+
+.card-description {
+  color: #5f6368;
+  font-size: 13px;
+  margin: 0;
+}
+/* Footer Container */
+.portal-footer {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #1a73e8; /* Main blue background to match the theme */
+  box-sizing: border-box;
+  margin-top: auto;          /* Works with flexbox layout to push footer to the absolute bottom */
+}
+
+/* Footer Typography */
+.footer-text {
+  margin: 0;
+  font-size: 14px;
+  color: #ffffff;            /* White text for clear contrast against the blue background */
+  font-weight: 400;
+}
+
+/* Container block configuration */
+.menu-dropdown {
+  width: 100%;
+}
+
+/* Hide default operating system disclosure arrows */
+.dropdown-summary {
+  list-style: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.dropdown-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom interactive arrow alignment indicators */
+.dropdown-arrow {
+  font-size: 10px;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate the custom arrow element when the tag wrapper container is clicked open */
+.menu-dropdown[open] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Nested sub-links content container layout alignment */
+.dropdown-content {
+  background-color: #080d1d; /* Adjust matching your default dark sidebar theme */
+  padding: 5px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 24px 10px 48px; /* Indents the submenu sub-links slightly to the right */
+  font-size: 13.5px;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.submenu-item:hover {
+  color: #ffffff;
+  background-color: #111c44;
+}
+
+.sub-icon {
+  margin-right: 12px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ADMIN LOGIN */
+/* ==========================================================================
+   Admin Login Page Styles (Strictly No Div Dependency)
+   ========================================================================== */
+
+/* Fullscreen Background Wrapper */
+.login-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #1e1b4b 0%, #0f0c29 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Main Form Card Container */
+.login-card-form {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gradient Header section */
+.login-card-header {
+  background: linear-gradient(135deg, #2e1a47 0%, #4c1d95 100%);
+  padding: 35px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shield-icon-badge {
+  font-size: 28px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.portal-main-title {
+  color: #ffffff;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.portal-tagline {
+  color: #c084fc;
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Card Body Area containing input inputs */
+.login-card-body {
+  padding: 30px 35px 15px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.restricted-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #6366f1;
+  background-color: #e0e7ff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+/* Input Fields Containers styled inside paragraphs */
+.input-group {
+  width: 100%;
+  margin: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1f2937;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+  border-color: #6366f1;
+}
+
+/* Password eye layout configuration */
+.password-group input {
+  padding-right: 40px;
+}
+
+.password-toggle-eye {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 16px;
+  user-select: none;
+}
+
+/* Submit Action Button */
+.login-submit-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #7c3aed 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 5px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.login-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+}
+
+/* Bottom Navigation Links Grid inside Card */
+.login-links-nav {
+  margin-top: 25px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.login-accent-link {
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.login-accent-link:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.link-separator {
+  color: #9ca3af;
+}
+
+/* Card Bottom Sticky Info Footer */
+.login-card-footer {
+  padding: 0 20px 25px 20px;
+  text-align: center;
+}
+
+.footer-notice-text {
+  margin: 0;
+  font-size: 11px;
+  color: #9ca3af;
+  letter-spacing: 0.2px;
+}
+
+/* ADMIN LOGIN */
+
+
+
+/* ADMIN DASHBOARD */
+/* Base Global Changes */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f4f6f9;
+  color: #333333;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Sidebar Navigation Styles
+   ========================================================================== */
+.sidebar {
+  width: 260px;
+  background-color: #0d1b2a;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #0b1520;
+  border-bottom: 1px solid #1e293b;
+}
+
+.brand-icon {
+  font-size: 24px;
+  background-color: #3b82f6;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.brand-text h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.brand-text p {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.sidebar-menu {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.menu-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #475569;
+  padding: 15px 24px 8px 24px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+}
+
+.menu-item:hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.menu-item.active {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  border-left: 4px solid #3b82f6;
+  padding-left: 20px;
+}
+
+.menu-icon {
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.has-arrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-icon {
+  font-size: 16px;
+  color: #475569;
+}
+
+.logout-item {
+  margin-top: auto;
+  color: #ef4444;
+  border-top: 1px solid #1e293b;
+  padding-top: 20px;
+}
+
+.logout-item:hover {
+  background-color: #7f1d1d;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   Main Content Layout Styles
+   ========================================================================== */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+}
+
+/* Navbar */
+.top-navbar {
+  height: 65px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger-btn {
+  background: #f1f5f9;
+  border: none;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.breadcrumb {
+  font-size: 14px;
+}
+
+.bread-bold {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.bread-sep {
+  color: #94a3b8;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.time-display {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.clock-time {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.clock-date {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.user-profile-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Inner Container Content */
+.dashboard-content {
+  padding: 35px;
+  flex: 1;
+}
+
+.overview-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.overview-subtitle {
+  margin: 6px 0 30px 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ==========================================================================
+   Dashboard Overview Grid & Cards 
+   ========================================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+}
+.stat-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.02);
+  border: 1px solid #e2e8f0;
+}
+
+.stat-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-label {
+  margin: 4px 0 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+/* Colors Theme Mapping from image states */
+.bg-blue { background-color: #eff6ff; }
+.text-blue { color: #2563eb; }
+
+.bg-red { background-color: #fef2f2; }
+.text-red { color: #dc2626; }
+
+.bg-orange { background-color: #fff7ed; }
+.text-orange { color: #ea580c; }
+
+.bg-green { background-color: #f0fdf4; }
+.text-green { color: #16a34a; }
+
+.bg-purple { background-color: #faf5ff; }
+.text-purple { color: #9333ea; }
+
+.bg-light-red { background-color: #fff5f5; }
+/* ADMIN DASHBOARD */
+
+/* USER REGISTER */
+/* Base Screen Rules */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #ffffff;
+}
+
+.register-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+/* ==========================================================================
+   Left Columns Banner Styles
+   ========================================================================== */
+.register-left-panel {
+  flex: 1.1;
+  background: radial-gradient(circle at top left, #064e3b 0%, #022c22 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #ffffff;
+}
+
+@media (max-width: 900px) {
+  .register-left-panel {
+    display: none; /* Collapses nicely on smaller client screen viewports */
+  }
+}
+
+.left-content-wrapper {
+  max-width: 460px;
+  text-align: center;
+}
+
+.graduation-cap-badge {
+  font-size: 36px;
+  background-color: #10b981;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+}
+
+.left-hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+}
+
+.left-hero-subtitle {
+  font-size: 14px;
+  color: #a7f3d0;
+  line-height: 1.6;
+  margin-bottom: 45px;
+}
+
+/* Vertical Stepper List Layout */
+.stepper-vertical-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: left;
+}
+
+.step-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  opacity: 0.5;
+}
+
+.step-row.active {
+  opacity: 1;
+}
+
+.step-circle-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-row-text h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.step-row-text p {
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  color: #a7f3d0;
+}
+
+/* ==========================================================================
+   Right Column Input Form Fields Styles
+   ========================================================================== */
+.register-right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.right-content-wrapper {
+  width: 100%;
+  max-width: 540px;
+}
+
+.form-top-logo {
+  margin-bottom: 20px;
+}
+
+/* Replicating the round red logo badge icon */
+.university-mini-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #dc2626;
+  background: radial-gradient(circle, #ffffff 40%, #fee2e2 100%);
+}
+
+.form-main-heading {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.form-sub-heading {
+  margin: 6px 0 25px 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Horizontal top indicator timeline stepper bubble bar */
+.horizontal-stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.h-step {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+}
+
+.h-step.active {
+  background-color: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.h-step-line {
+  flex: 1;
+  height: 2px;
+  background-color: #e2e8f0;
+}
+
+/* Grid Layout Architecture inside the HTML Form */
+.registration-grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 500px) {
+  .registration-grid-form {
+    grid-template-columns: 1fr;
+  }
+  .full-width-input {
+    grid-column: span 1 !important;
+  }
+}
+
+.form-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width-input {
+  grid-column: span 2;
+}
+
+.form-input-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.form-input-group input, 
+.form-input-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #0f172a;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  outline: none;
+  height: 40px;
+  transition: border-color 0.2s;
+}
+
+.form-input-group input:focus, 
+.form-input-group select:focus {
+  border-color: #10b981;
+}
+
+/* Custom password styling wrapper to position visibility eye icon */
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-input-container input {
+  padding-right: 40px;
+}
+
+.password-eye-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* Green Action Submit Navigation Trigger Button */
+.register-next-btn {
+  grid-column: span 2;
+  width: 100%;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+@media (max-width: 500px) {
+  .register-next-btn {
+    grid-column: span 1;
+  }
+}
+
+.register-next-btn:hover {
+  background-color: #059669;
+}
+
+/* Redirection link texts below action wrapper buttons */
+.login-redirect-text {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  margin: 20px 0 0 0;
+}
+
+.login-redirect-text a {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-redirect-text a:hover {
+  text-decoration: underline;
+}
+
+/* Bottom mini system identity notices signature line footer */
+.register-page-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* USER REGISTER */
+
+
+/* COLLEGE MANAGEMENT */
+/* Page structural layouts background matching dashboard body canvas */
+.college-mgmt-page {
+  padding: 30px 20px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Card Wrapper Styles sheets blocks */
+.mgmt-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Add component custom panel titles header colors */
+.card-primary-title {
+  color: #2563eb;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+.card-secondary-title {
+  color: #475569;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+/* Form structure setups */
+.add-college-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.mgmt-input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+}
+
+.mgmt-input-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.mgmt-input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.mgmt-input-group input:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+/* Core Action Save custom button controls styling */
+.mgmt-save-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 40px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.2s;
+}
+
+.mgmt-save-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   Interactive Data Table Controls Setup Styles
+   ========================================================================== */
+.table-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.entries-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.entries-selector-box select {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.table-search-box input {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 220px;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.table-search-box input:focus {
+  border-color: #2563eb;
+}
+
+/* Core Table Structural setup grid styles */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-records-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.data-records-table th {
+  padding: 14px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* Custom mini sort indicators placeholder setup styling values */
+.sort-arrows {
+  font-size: 8px;
+  color: #94a3b8;
+  margin-left: 4px;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+.data-records-table td {
+  padding: 16px 12px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.bold-cell-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.description-cell {
+  color: #64748b;
+  font-size: 13px;
+  max-width: 300px;
+}
+
+/* Action Control Buttons inside columns custom templates layout mapping */
+.table-action-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  border: 1px solid #3b82f6;
+  color: #2563eb;
+}
+
+.edit-btn:hover {
+  background-color: #eff6ff;
+}
+
+.delete-btn {
+  border: 1px solid #f87171;
+  color: #dc2626;
+}
+
+.delete-btn:hover {
+  background-color: #fef2f2;
+}
+
+/* ==========================================================================
+   Table Footer & Interactive Pagination Stylesheet Configuration
+   ========================================================================== */
+.table-footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.showing-entries-text {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.pagination-button-group {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.pag-btn {
+  background-color: #f8fafc;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pag-btn:last-child {
+  border-right: none;
+}
+
+.pag-btn:hover:not(.disabled):not(.active) {
+  background-color: #cbd5e1;
+}
+
+.pag-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pag-btn.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+/* COMPLAINT TYPES */
+/* Base canvas setting matching the system dashboard skin colors */
+.complaint-types-page {
+  padding: 30px 20px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Card layout wrapper matching blueprint structure rules */
+.type-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Form block headers text styles */
+.type-heading-blue {
+  color: #2563eb;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+.type-subheading-dark {
+  color: #475569;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+/* Structural alignments rules inside application panel view options */
+.add-type-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.type-input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+}
+
+.type-input-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.type-input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.type-input-group input:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+/* Pill layout submission control call to action click button triggers */
+.type-action-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 45px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.2s;
+}
+
+.type-action-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   Table Sorting / Search Filter Utilities Headers
+   ========================================================================== */
+.filter-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.page-entries-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.page-entries-dropdown select {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.search-filter-box input {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 220px;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.search-filter-box input:focus {
+  border-color: #2563eb;
+}
+
+/* Table grid template view frameworks settings */
+.responsive-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.types-data-grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.types-data-grid th {
+  padding: 14px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.grid-sort-icons {
+  font-size: 8px;
+  color: #94a3b8;
+  margin-left: 4px;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+.types-data-grid td {
+  padding: 16px 12px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.highlight-row-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Table Actions Custom Pilled configuration buttons components */
+.row-action-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+
+.pill-edit {
+  border: 1px solid #3b82f6;
+  color: #2563eb;
+}
+
+.pill-edit:hover {
+  background-color: #eff6ff;
+}
+
+.pill-delete {
+  border: 1px solid #f87171;
+  color: #dc2626;
+}
+
+.pill-delete:hover {
+  background-color: #fef2f2;
+}
+
+/* ==========================================================================
+   Static Table Pagination Alignment Block Styles Sheets rules
+   ========================================================================== */
+.table-footer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.counter-summary-text {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.static-pagination-strip {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.strip-item {
+  background-color: #f8fafc;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.strip-item:last-child {
+  border-right: none;
+}
+
+.strip-item:hover:not(.disabled):not(.active) {
+  background-color: #cbd5e1;
+}
+
+.strip-item.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.strip-item.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+/*  */
+/* SESSION MANAGEMENT */
+/* Base page workspace background matching the system environment layout colors */
+.session-mgmt-page {
+  padding: 30px 20px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Card panel layout container configurations */
+.session-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 30px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Core modular component titles rulesets */
+.session-heading-blue {
+  color: #2563eb;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 25px 0;
+}
+
+.session-subheading-dark {
+  color: #475569;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+/* Form panel alignments setups */
+.add-session-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.session-input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+}
+
+.session-input-group label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.session-input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #f8fafc;
+  font-size: 15px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.session-input-group input:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+}
+
+/* Rounded save actions custom trigger click buttons components */
+.session-action-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 45px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  transition: background-color 0.2s;
+}
+
+.session-action-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================================================
+   Table Sorting / Filtering Top Headers Bar Controls Layout
+   ========================================================================== */
+.filter-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.page-entries-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.page-entries-dropdown select {
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+}
+
+.search-filter-box input {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 220px;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.search-filter-box input:focus {
+  border-color: #2563eb;
+}
+
+/* ==========================================================================
+   Responsive Grid System Table Data Architectures
+   ========================================================================== */
+.responsive-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.session-data-grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.session-data-grid th {
+  padding: 14px 12px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.grid-sort-icons {
+  font-size: 8px;
+  color: #94a3b8;
+  margin-left: 4px;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+.session-data-grid td {
+  padding: 16px 12px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.highlight-row-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* Light alternating shaded rows matching row entry 2 in the blueprint image */
+.striped-row {
+  background-color: #f8fafc;
+}
+
+/* Action items button pilled link rows layouts formatting blocks */
+.row-action-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+
+.pill-edit {
+  border: 1px solid #3b82f6;
+  color: #2563eb;
+}
+
+.pill-edit:hover {
+  background-color: #eff6ff;
+}
+
+.pill-delete {
+  border: 1px solid #f87171;
+  color: #dc2626;
+}
+
+.pill-delete:hover {
+  background-color: #fef2f2;
+}
+
+/* ==========================================================================
+   Static Navigation Footer Timeline Pagination Strips
+   ========================================================================== */
+.table-footer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.counter-summary-text {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.static-pagination-strip {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.strip-item {
+  background-color: #f8fafc;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.strip-item:last-child {
+  border-right: none;
+}
+
+.strip-item:hover:not(.disabled):not(.active) {
+  background-color: #cbd5e1;
+}
+
+.strip-item.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.strip-item.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+/* CHANGE PASSWORD */
+/* Base container matching the light canvas background color of your system environment */
+.password-change-page {
+  padding: 60px 20px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Central card panel configuration with matching custom shadow box layer values */
+.password-card-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15), 0 4px 12px rgba(0, 0, 0, 0.03);
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Form header label titles */
+.password-card-title {
+  color: #0f172a;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Inner form stack arrangement styling */
+.password-change-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.form-input-row {
+  width: 100%;
+}
+
+.form-input-row input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 14.5px;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Light blue indicator when focusing inside the text field */
+.form-input-row input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Custom placeholder visibility adjustments */
+.form-input-row input::placeholder {
+  color: #64748b;
+  opacity: 0.85;
+}
+
+/* Blue Action Button Control Component settings matching the blueprint reference image */
+.password-submit-btn {
+  background-color: #0066ff;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.password-submit-btn:hover {
+  background-color: #0052cc;
+}
+
+.password-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* CHANGE PASSWORD */
+
+/* DISCUSSION FORUM */
+/* Base canvas workspace wrapper color configuration matching your interface architecture */
+.forum-view-page {
+  padding: 30px 20px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* White background structural layout block container card */
+.forum-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Main typography section title structure color rulesets */
+.card-title-dark {
+  color: #64748b;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Upper data control action fields framework setups */
+.forum-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.entries-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.entries-selector-box select {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+  font-size: 14px;
+}
+
+.forum-search-box input {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 240px;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.forum-search-box input:focus {
+  border-color: #2563eb;
+}
+
+/* ==========================================================================
+   Responsive Grid System Architecture Table Data Component Layout
+   ========================================================================== */
+.forum-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.forum-records-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.forum-records-table th {
+  padding: 14px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.sort-arrows {
+  font-size: 8px;
+  color: #94a3b8;
+  margin-left: 4px;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+.forum-records-table td {
+  padding: 18px 12px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.bold-cell-text {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.answer-cell {
+  color: #334155;
+}
+
+.bold-author {
+  font-weight: 700;
+  color: #0f172a;
+  margin-right: 4px;
+}
+
+/* ==========================================================================
+   Action Control Double Button Elements Configurations
+   ========================================================================== */
+.forum-action-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Red bordered custom square trash icon tool box item */
+.delete-icon-btn {
+  background-color: #ffffff;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.delete-icon-btn:hover {
+  background-color: #fef2f2;
+}
+
+/* Main crimson filled full text click submission button control components */
+.delete-question-btn {
+  background-color: #cc2b37;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(204, 43, 55, 0.15);
+  transition: background-color 0.2s;
+}
+
+.delete-question-btn:hover {
+  background-color: #b0202a;
+}
+
+/* ==========================================================================
+   Table Timeline Pagination Nav Buttons Strip Block Configuration
+   ========================================================================== */
+.forum-footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.showing-entries-text {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.pagination-button-group {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.pag-btn {
+  background-color: #f8fafc;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.pag-btn:last-child {
+  border-right: none;
+}
+
+.pag-btn:hover:not(.disabled):not(.active) {
+  background-color: #cbd5e1;
+}
+
+.pag-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.pag-btn.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+/* DISCUSSION FORUM */
+
+
+/* USER MANAGEMENT */
+/* Base environment workspace theme setup wrapper */
+.user-log-page {
+  padding: 30px 20px;
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Master card configuration layer layout */
+.log-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  padding: 35px 30px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.log-title-text {
+  color: #64748b;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  letter-spacing: -0.5px;
+}
+
+/* Metadata filters alignment grid block rulesets */
+.log-controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.entries-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.entries-selector-box select {
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #ffffff;
+  outline: none;
+  font-size: 14px;
+}
+
+.log-search-box input {
+  padding: 8px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  width: 240px;
+  font-size: 13.5px;
+  outline: none;
+}
+
+.log-search-box input:focus {
+  border-color: #2563eb;
+}
+
+/* ==========================================================================
+   Responsive Scroll Setup for Interactive Sorting Anchors
+   ========================================================================== */
+.log-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-bottom: 1px solid #e2e8f0;
+  scroll-behavior: smooth; /* Enables smooth animated scroll jump when arrows are clicked */
+}
+
+.log-records-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.log-records-table th {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* Structural cell alignment wrappers for sort buttons */
+.th-sort-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+.justify-center {
+  justify-content: center;
+  width: 100%;
+}
+
+/* Stacked clickable HTML sorting anchor link blocks styles */
+.sort-arrows-stack {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 0.95;
+  vertical-align: middle;
+}
+
+.sort-arrow-link {
+  font-size: 11px;
+  color: #94a3b8;
+  text-decoration: none;
+  opacity: 0.4;
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.sort-arrow-link:hover {
+  opacity: 1;
+  color: #2563eb;
+}
+
+/* Placeholder space settings for empty data fields layout */
+.empty-placeholder-row td {
+  padding: 40px 12px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  font-style: italic;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   Pagination Control Footers Template Strip Configurations
+   ========================================================================== */
+.log-footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.showing-entries-text {
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.pagination-button-group {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.pag-btn {
+  background-color: #f8fafc;
+  border: none;
+  border-right: 1px solid #e2e8f0;
+  color: #334155;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  cursor: pointer;
+  outline: none;
+  font-weight: 500;
+}
+
+.pag-btn:last-child {
+  border-right: none;
+}
+
+.pag-btn.disabled {
+  color: #cbd5e1;
+  cursor: not-allowed;
+  background-color: #f1f5f9;
+}
+
+/* USER MANAGEMENT */
+/* USER LOGIN */
+/* Master Reset & High-Level Display Settings Splitting Framework layout */
+.login-page-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   LEFT CANVAS INFO BANNER COMPONENT
+   ========================================================================== */
+.login-left-banner {
+  flex: 1;
+  background: radial-gradient(circle at 10% 20%, #1a365d 0%, #0f172a 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #ffffff;
+}
+
+@media (max-width: 960px) {
+  .login-left-banner {
+    display: none; /* Collapses the left info frame cleanly on small mobile viewport displays */
+  }
+}
+
+.banner-content-wrapper {
+  max-width: 480px;
+  width: 100%;
+}
+
+.brand-logo-glow {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.university-icon {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.university-heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.system-subtitle {
+  color: #94a3b8;
+  font-size: 14.5px;
+  line-height: 1.5;
+  margin: 0 0 40px 0;
+}
+
+/* Row elements for benefit highlights */
+.feature-highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-highlight-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.feature-badge {
+  background-color: rgba(255, 255, 255, 0.08);
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 14px;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   RIGHT AUTHENTICATION FORM INPUT MODULE COMPONENT
+   ========================================================================== */
+.login-right-form-panel {
+  width: 460px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 960px) {
+  .login-right-form-panel {
+    width: 100%;
+  }
+}
+
+.form-content-wrapper {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Emblem Ring Decoration Graphics settings */
+.crest-emblem-container {
+  margin-bottom: 28px;
+}
+
+.crest-emblem-graphic {
+  width: 70px;
+  height: 70px;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc2626;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3)
+}
+
+.welcome-header {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+
+.welcome-sub {
+  color: #64748b;
+  font-size: 13.5px;
+  margin: 0 0 28px 0;
+}
+
+.auth-form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-field-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.input-field-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  color: #0f172a;
+  transition: border-color 0.2s;
+}
+
+.input-field-group input:focus {
+  border-color: #4f46e5;
+}
+
+.password-input-relative {
+  position: relative;
+  width: 100%;
+}
+
+.password-toggle-eye {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+.forgot-password-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+
+.forgot-link {
+  font-size: 12px;
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* Bright blue block core login submission action controller setup */
+.login-submit-btn {
+  background-color: #4f46e5;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.login-submit-btn:hover {
+  background-color: #4338ca;
+}
+
+/* ==========================================================================
+   FOOTER REDIRECT NAVIGATION & COPYRIGHTS BLOCKS STYLES
+   ========================================================================== */
+.auth-footer-links {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.signup-prompt {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+.inline-blue-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.inline-blue-link:hover {
+  text-decoration: underline;
+}
+
+.home-navigation-row {
+  display: flex;
+  justify-content: center;
+}
+
+.back-home-link {
+  font-size: 13px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-home-link:hover {
+  text-decoration: underline;
+}
+
+.auth-system-copyright {
+  margin-top: 50px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 20px;
+  font-size: 11px;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.4;
+}
+/* USER LOGIN */
+
+/*  */
+.complaints-page {
+  min-height: 100vh;
+  background-color: #f4f7fa;
+}
+
+.complaints-card {
+  border-radius: 15px;
+}
+
+.complaints-title {
+  color: #61778d;
+}
+
+.entries-select {
+  width: 85px;
+}
+
+.search-input {
+  width: 250px;
+}
+
+.complaints-table th {
+  color: #40566d;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 18px 12px;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.complaints-table td {
+  padding: 18px 12px;
+  color: #183b5b;
+}
+
+.complaints-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+.complaints-table tbody tr:hover {
+  background-color: #f5f8fb;
+}
+
+.complaints-table .badge {
+  min-width: 110px;
+  padding: 7px 12px;
+  text-transform: capitalize;
+}
+
+.action-btn {
+  min-width: 90px;
+}
+/* All Complaints ended */

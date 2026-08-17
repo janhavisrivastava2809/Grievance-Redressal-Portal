@@ -1,0 +1,102 @@
+/* Main Profile Card */
+.profile-card {
+  max-width: 800px;
+  width: 100%;
+  border-radius: 50px !important;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Header */
+.profile-header {
+  background: linear-gradient(120deg, #159fe5, #7139ed);
+  min-height: 130px;
+ 
+}
+
+/* Profile Image Position */
+.profile-image {
+  margin-top: -32px;
+  z-index: 2;
+}
+
+/* Profile Circle */
+.profile-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Camera Icon */
+.profile-image span {
+  border: 3px solid white;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Inputs */
+.form-control,
+.form-select {
+  border-radius: 8px;
+  border: 1px solid #d9e2ec;
+  padding: 10px 12px;
+  transition: 0.2s ease;
+}
+
+/* Input Focus */
+.form-control:focus,
+.form-select:focus {
+  border-color: #159fe5;
+  box-shadow: 0 0 0 3px rgba(21, 159, 229, 0.12);
+}
+
+/* Section Heading */
+h6 {
+  letter-spacing: 0.5px;
+}
+
+/* Upload Box */
+.border.border-2 {
+  border-radius: 12px !important;
+  border-style: dashed !important;
+  background-color: #fafcff;
+  transition: 0.2s ease;
+}
+
+/* Upload Box Hover */
+.border.border-2:hover {
+  background-color: #f3f8ff;
+  border-color: #159fe5 !important;
+}
+
+/* Save Button */
+.btn-primary {
+  border-radius: 8px;
+  padding: 10px 22px !important;
+  border: none;
+  background: linear-gradient(120deg, #159fe5, #7139ed);
+  transition: 0.2s ease;
+}
+
+/* Button Hover */
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(21, 159, 229, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 576px) {
+  .profile-card {
+    border-radius: 15px !important;
+  }
+
+  .card-body {
+    padding: 20px !important;
+  }
+
+  .profile-header {
+    padding: 20px !important;
+  }
+}
