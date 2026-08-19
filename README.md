@@ -36,7 +36,7 @@ Administrators can manage registered users, colleges, sessions, complaint types,
 * Update complaint status
 * Manage complaint categories
 
-### 📊 Complaint Status
+###  Complaint Status
 
 The portal supports different grievance stages such as:
 
