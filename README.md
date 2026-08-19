@@ -1,16 +1,16 @@
-# 🏛️ Grievance Redressal Portal
+#  Grievance Redressal Portal
 
 A web-based **Grievance Redressal Portal** designed to provide a simple, transparent, and efficient platform for students/users to submit complaints and track their resolution status. The system enables administrators to manage complaints, users, colleges, sessions, and complaint categories through a centralized dashboard.
 
-## 📌 Project Overview
+##  Project Overview
 
 The **Grievance Redressal Portal** digitizes the traditional complaint management process. Users can register/login, submit grievances, view their complaint history, and track the current status of submitted complaints.
 
 Administrators can manage registered users, colleges, sessions, complaint types, and grievances from an interactive admin dashboard. Complaints can be categorized and their status can be updated throughout the resolution process.
 
-## ✨ Key Features
+##  Key Features
 
-### 👤 User Features
+###  User Features
 
 * User registration and secure login
 * Submit new grievances
@@ -22,7 +22,7 @@ Administrators can manage registered users, colleges, sessions, complaint types,
 * Update profile information
 * Change password
 
-### 🛠️ Admin Features
+###  Admin Features
 
 * Admin authentication
 * Interactive admin dashboard
@@ -44,7 +44,7 @@ The portal supports different grievance stages such as:
 
 It can also identify grievances that are **Not Proceeded** based on administrative action.
 
-## 🧑‍💻 Technology Stack
+##  Technology Stack
 
 **Frontend**
 
@@ -70,7 +70,7 @@ It can also identify grievances that are **Not Proceeded** based on administrati
 * Git & GitHub
 * REST APIs
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```text
 User
@@ -89,7 +89,7 @@ MongoDB Database
 Admin Dashboard
 ```
 
-## 📂 Main Modules
+##  Main Modules
 
 ├── Authentication
 │   ├── User Login
@@ -112,7 +112,7 @@ Admin Dashboard
     └── Complaint Management
 ```
 
-## 🔄 How It Works
+##  How It Works
 
 1. User creates an account and logs into the portal.
 2. User submits a grievance by providing the required details.
@@ -131,7 +131,7 @@ Admin Dashboard
 * Centralize grievance and user data.
 * Provide an efficient admin management system.
 
-## 🔐 Security
+##  Security
 
 * Separate user and admin authentication
 * Protected admin dashboard
@@ -139,7 +139,7 @@ Admin Dashboard
 * Password management functionality
 * Role-based access to system features
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 * Email/SMS notifications for complaint status updates
 * Complaint priority levels
@@ -150,7 +150,7 @@ Admin Dashboard
 * Complaint escalation system
 * Deployment using cloud services
 
-## 💡 Learning Outcomes
+##  Learning Outcomes
 
 Through this project, I gained practical experience in:
 
@@ -164,7 +164,7 @@ Through this project, I gained practical experience in:
 * Responsive UI development
 * Git and GitHub version control
 
-## 👩‍💻 Developer
+##  Developer
 
 **Janhavi Srivastava**
 B.Tech – Computer Science & Engineering
